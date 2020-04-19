@@ -3,9 +3,15 @@ public class StringConverter
 {
     public static String reverse(String str)
     {
+        reversed = "";
         // run through each char backwards
-        // store in a reversed variable
+        for (i = str.length() - 1; i >= 0; i--)
+        {
+            // store each char in a reversed variable
+            reversed += str.get(i);
+        }
         // return reversed variable
+        return reversed;
     }
     public static boolean checkPalindrome(String str)
     {
