@@ -41,6 +41,7 @@ public class StringConverter
         // search through words for vowels
         String vowels = "aeiou";
         // if first letter contains vowel
+        System.out.println(vowels.indexOf(str.substring(0)) >= 0);
         if (vowels.indexOf(str.substring(0)) >= 0)
         {
             // return str + "yay"
@@ -60,8 +61,8 @@ public class StringConverter
                 if (Character.isUpperCase(str.charAt(0)))
                 {
                     // capitalize end, uncapitalize start
-                    end.toUpperCase();
-                    start.toLowerCase();
+                    end = end.toUpperCase();
+                    start = start.toLowerCase();
                 }
                 // return end + start + "ay"
                 return end + start + "ay";
