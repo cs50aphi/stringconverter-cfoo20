@@ -38,20 +38,38 @@ public class StringConverter
     // Pig Latin
     public static String pigLatinate(String str)
     {
-        String vowels = "aeiou";
         // search through words for vowels
-        // iterate over each letter in word
+        String vowels = "aeiou";
         // if first letter contains vowel
+        if (vowels.indexOf(str.substring(0)) >= 0)
+        {
             // return str + "yay"
-        // if contains any more vowels, get index of first vowel
-            // get start, which is first word until but not including first vowel
-            // get end, which is the rest of the word
-            // if capitalized
-                // capitalize end, uncapitalize start
-            // return end + start + "ay"
+            return str + "yay";
+        }
+        // iterate over each letter in word
+        for (int i = 1; i < str.length(); i++)
+        {
+            // if contains any more vowels, get index of first vowel
+            if (vowels.indexOf(str.substring(i, i + 1)) >= 0)
+            {
+                // get start, which is first word until but not including first vowel
+                String start = str.substring(0, i);
+                // get end, which is the rest of the word
+                String end = str.substring(i);
+                // if capitalized
+                if (Character.isUpperCase(str.charAt(0)))
+                {
+                    // capitalize end, uncapitalize start
+                    end.toUpperCase();
+                    start.toLowerCase();
+                }
+                // return end + start + "ay"
+                return end + start + "ay";
+            }
+        }
         // else
-            // return str + "ay"
-        return "";
+        // return str + "ay"
+        return str + "ay";
     }
 
     // Shorthand
