@@ -78,10 +78,19 @@ public class StringConverter
     public static String shorthand(String str)
     {
         // Add space before and after to ensure only change words
-        // replace all " and " and " And " with "&"
+        str = " " + str + " ";
+        // replace all " and " and " And " with " & "
+        str = str.replaceAll(" and ", " & ");
+        str = str.replaceAll(" And ", " & ");
         // replace all " to " and " To " with "2"
+        str = str.replaceAll(" to ", " 2 ");
+        str = str.replaceAll(" To ", " 2 ");
         // replace all " you " and " You " with "U"
+        str = str.replaceAll(" you ", " U ");
+        str = str.replaceAll(" You ", " U ");
         // replace all " for " and " For " with "4"
+        str = str.replaceAll(" for ", " 4 ");
+        str = str.replaceAll(" For ", " 4 ");
         // iterate over each letter in word
             // unless it was " you " or " You " before (campare old and new string)
             // remove all vowels
