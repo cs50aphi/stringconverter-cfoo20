@@ -40,6 +40,8 @@ public class StringConverter
     {
         // search through words for vowels
         String vowels = "aeiou";
+        // remove punctuation marks?
+        str = str.replaceAll("\\p{Punct}","");
         // if first letter contains vowel
         if (vowels.indexOf(str.charAt(0)) >= 0)
         {
