@@ -41,8 +41,7 @@ public class StringConverter
         // search through words for vowels
         String vowels = "aeiou";
         // if first letter contains vowel
-        System.out.println(vowels.indexOf(str.substring(0)) >= 0);
-        if (vowels.indexOf(str.substring(0)) >= 0)
+        if (vowels.indexOf(str.charAt(0)) >= 0)
         {
             // return str + "yay"
             return str + "yay";
