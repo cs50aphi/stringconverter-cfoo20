@@ -1,6 +1,7 @@
 // StringConverter by Cheyenne Foo
 public class StringConverter
 {
+    // Reverse
     public static String reverse(String str)
     {
         String reversed = "";
@@ -13,6 +14,8 @@ public class StringConverter
         // return reversed variable
         return reversed;
     }
+
+    // Palindrome
     public static boolean checkPalindrome(String str)
     {
         // remove all spaces and punctuation marks
@@ -24,6 +27,8 @@ public class StringConverter
         // else return false
         return false;
     }
+
+    // Pig Latin
     public static String pigLatinate(String str)
     {
         String vowels = "aeiou";
@@ -41,8 +46,20 @@ public class StringConverter
             // return str + "ay"
         return "";
     }
+
+    // Shorthand
     public static String shorthand(String str)
     {
+        // replace all "and" and "And" with "&"
+        // replace all "to" and "To" with "2"
+        // replace all "you" and "You" with "U"
+        // replace all "for" and "For" with "4"
+        // iterate over each letter in word
+            // unless it was "you" or "You" before (campare old and new string)
+            // remove all vowels
+        // return new string
         return "";
     }
+
+    // backwards helper??
 }
