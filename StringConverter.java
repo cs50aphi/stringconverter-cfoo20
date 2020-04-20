@@ -14,18 +14,23 @@ public class StringConverter
         str = str.replaceAll("\\p{Punct}","");
         str = str.replaceAll("\\s", "");
         // convert all letters to lowercase
-        // only check if even number of chars
-        if (str.length() % 2 == 1)
-        {
-            // else return false
-            return false;
-        }
         // check if front half is the same as reversed back half
         int half = str.length() / 2;
         String front = str.substring(0, half);
-        String back = str.substring(half);
-
+        String back = "";
+        // if odd, don't include middle letter
+        if (str.length() % 2 == 1)
+        {
+            back = str.substring(half + 1);
+        }
+        // if even, just last half
+        else back = str.substring(half);
+        back = backwards(back);
+        if (front.equalsIgnoreCase(back))
+        {
             // return true if same
+            return true;
+        }
         // else return false
         return false;
     }
