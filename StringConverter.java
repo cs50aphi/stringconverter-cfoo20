@@ -15,6 +15,13 @@ public class StringConverter
     }
     public static boolean checkPalindrome(String str)
     {
+        // remove all spaces and punctuation marks
+        // convert all letters to lowercase
+        // only check if even number of chars
+            // else return false
+        // check if front half is the same as reversed back half
+            // return true if false
+        // else return false
         return false;
     }
     public static String pigLatinate(String str)
