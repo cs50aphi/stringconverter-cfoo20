@@ -93,7 +93,7 @@ public class StringConverter
         str = str.replaceAll(" For ", " 4 ");
         // search through words for vowels
         String vowels = "aeiouAEIOU";
-        // iterate over each letter
+        // iterate over each letter backwards
         for (int i = str.length() - 1; i > 0; i--)
         {
             // skip if white space before and after letter
