@@ -39,7 +39,7 @@ public class StringConverter
     public static String pigLatinate(String str)
     {
         // search through words for vowels
-        String vowels = "aeiou";
+        String vowels = "aeiouAEIOU";
         // remove punctuation marks?
         str = str.replaceAll("\\p{Punct}","");
         // if first letter contains vowel
@@ -91,11 +91,25 @@ public class StringConverter
         // replace all " for " and " For " with "4"
         str = str.replaceAll(" for ", " 4 ");
         str = str.replaceAll(" For ", " 4 ");
-        // iterate over each letter in word
-            // unless it was " you " or " You " before (campare old and new string)
+        // search through words for vowels
+        String vowels = "aeiouAEIOU";
+        // iterate over each letter
+        for (int i = str.length() - 1; i > 0; i--)
+        {
+            // skip if white space before and after letter
+            if ((Character.isWhitespace(str.charAt(i - 1))) && (Character.isWhitespace(str.charAt(i + 1))))
+            {
+                i--;
+            }
             // remove all vowels
+            if (vowels.indexOf(str.substring(i, i + 1)) >= 0)
+            {
+                str = str.substring(0, i) + str.substring(i + 1);
+            }
+        }
         // return new string
-        return "";
+        // remove front and back spaces
+        return str.trim();
     }
 
     // backwards helper?? (just reverse)
